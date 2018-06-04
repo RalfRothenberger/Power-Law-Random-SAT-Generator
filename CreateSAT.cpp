@@ -1,6 +1,7 @@
 #include "SatGeneration.hpp"
 #include <Math.h>
 #include <cstring>
+#include <time.h>
 
 
 using namespace std;
@@ -31,10 +32,10 @@ int main(int argc, char* argv[]){
 	int S=1;
 	double P=2.75;
 	double B=3.2;
-	char* f = "";
+	char* f =(char*)"";
 	bool U=true;
 	bool output=false;
-	char* g="p";
+	char* g=(char*)"p";
 	if (helper::cmdOptionExists(argv, argv+argc,"-q")) quiet=true;
 	if (helper::cmdOptionExists(argv, argv+argc,"-g")) {
 		g=helper::getCmdOption(argv, argv+argc, "-g");
@@ -67,10 +68,12 @@ int main(int argc, char* argv[]){
 		char* u=helper::getCmdOption(argv, argv+argc, "-u");
 		if(strcmp(u,"1")==0) U=true;
 	}
-	if (helper::cmdOptionExists(argv, argv+argc,"-s")) {
-		char* s=helper::getCmdOption(argv, argv+argc, "-s");
-		S=atoi (s);
+	if (helper::cmdOptionExists(argv, argv + argc, "-s")) {
+		char* s = helper::getCmdOption(argv, argv + argc, "-s");
+		S = atoi(s);
 	}
+	else
+		S = time(NULL);
 	if(quiet==false) {
 		printf("SAT Generator for power-law distributed variable frequencies\n------------------------------------------------------------\n");
 		printf("-g d|p|u \n\tchoose between power-law distributed variables (p) or double power-law (d) or uniform (u) \n");
