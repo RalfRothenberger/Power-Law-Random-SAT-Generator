@@ -1,5 +1,5 @@
-#include "SatGeneration.hpp"
-#include <Math.h>
+#include "SATGeneration.hpp"
+#include <math.h>
 #include <cstring>
 #include <time.h>
 

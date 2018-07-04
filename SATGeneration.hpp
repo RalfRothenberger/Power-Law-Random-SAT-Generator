@@ -3,7 +3,7 @@
 
 #undef min
 #undef max
-#include <Math.h>
+#include <math.h>
 #include <algorithm>
 #include <random>
 #include "Formula.hpp"
