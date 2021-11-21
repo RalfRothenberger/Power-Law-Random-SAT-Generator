@@ -66,7 +66,7 @@ int main(int argc, char* argv[]){
 	}
 	if (helper::cmdOptionExists(argv, argv+argc,"-u")) {
 		char* u=helper::getCmdOption(argv, argv+argc, "-u");
-		if(strcmp(u,"1")==0) U=true;
+		if(strcmp(u,"0")==0) U=false;
 	}
 	if (helper::cmdOptionExists(argv, argv + argc, "-s")) {
 		char* s = helper::getCmdOption(argv, argv + argc, "-s");
