@@ -27,12 +27,12 @@ public:
 		betaVNorm = 1/(betaV-1);
 
 		for(int i=0;i<clauses;++i){
-			CWeights[i]=pow((clauses/(i+1)),betaCNorm);
+			CWeights[i]=pow((double(clauses)/double(i+1)),betaCNorm);
 			CSum+=CWeights[i];
 			TC[CSum]=i;
 		}
 		for(int i=0;i<variables;++i){
-			VWeights[i]=pow((variables/(i+1)),betaVNorm);
+			VWeights[i]=pow((double(variables)/double(i+1)),betaVNorm);
 			VSum+=VWeights[i];
 			TV[VSum]=i;
 		}
@@ -77,8 +77,8 @@ public:
 
 			double betaNorm;
 			betaNorm = 1/(beta-1);
-						for(int i=0;i<variables;++i){
-				VWeights[i]=pow((variables/(i+1)),betaNorm);
+			for(int i=0;i<variables;++i){
+				VWeights[i]=pow((double(variables)/double(i+1)),betaNorm);
 				VSum+=VWeights[i];
 				TV[VSum]=i;
 			}
